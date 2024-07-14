@@ -4,6 +4,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import "./information.css"
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 export default function Information({wheather}){
 
   let rainurl="https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJhaW4lMjB3ZWF0aGVyfGVufDB8fDB8fHww";
@@ -11,7 +14,7 @@ export default function Information({wheather}){
   let coldurl="https://images.unsplash.com/photo-1612208695882-02f2322b7fee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sZCUyMHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D";
     return (
         <>
-         <h2 > WHEATHER REPORT</h2>
+        
           <div className='info'>
           
            
@@ -25,7 +28,7 @@ export default function Information({wheather}){
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {wheather.city} {wheather.temp>30}
+            {wheather.city} {wheather.humidity>80 ? <ThunderstormIcon/>:wheather.temp<20?<AcUnitIcon/>:<WbSunnyIcon/>}
           </Typography>
           <Typography variant="body2" color="text.secondary">
              TEMPERATRE:{wheather.temp} <br /> <br />
