@@ -11,7 +11,9 @@ function App() {
     maxtemp:35,
     mintemp:29,
     humidity:80,
-    wheather:"haze"
+    wheather:"haze",
+    feels_like:40.1,
+    cloud:75,
   })
   let update=(newwheather)=>{
     setwheather(newwheather);

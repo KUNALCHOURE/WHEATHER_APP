@@ -38,7 +38,8 @@ export default function Information({wheather}){
                 MIN TEMPERATURE:{wheather.mintemp} <br />
              
              
-             
+                {`${wheather.city} is currently experiencing ${wheather.temp}°C, feeling like ${wheather.feels_like}°C, with ${wheather.humidity}% humidity and ${wheather.clouds}% cloud cover.`}
+
           </Typography>
         </CardContent>
       </CardActionArea>

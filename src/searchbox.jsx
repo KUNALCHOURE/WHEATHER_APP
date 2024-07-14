@@ -2,6 +2,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './searchbox.css'
 import { useState } from 'react';
+import { json } from 'express';
 
 export default function Search({update}){
     let [city,setcity]=useState("");
@@ -27,6 +28,8 @@ export default function Search({update}){
         humidity:jsonresponse.main.humidity,
         maxtemp:jsonresponse.main.temp_max,
         mintemp:jsonresponse.main.temp_min,
+        feels_like:jsonresponse.main.feels_like,
+       
      }
 
      update(res);
