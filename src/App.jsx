@@ -13,7 +13,7 @@ function App() {
     humidity:80,
     wheather:"haze",
     feels_like:40.1,
-    cloud:75,
+    cloud:"",
   })
   let update=(newwheather)=>{
     setwheather(newwheather);

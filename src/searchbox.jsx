@@ -29,7 +29,7 @@ export default function Search({update}){
         maxtemp:jsonresponse.main.temp_max,
         mintemp:jsonresponse.main.temp_min,
         feels_like:jsonresponse.main.feels_like,
-       
+        cloud:jsonresponse.clouds.all,
      }
 
      update(res);
