@@ -15,9 +15,9 @@ export default function Search({ update }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
-    let jsonResponse = await response.json();
+    let jsonresponse = await response.json();
 
-    console.log(jsonResponse);
+    console.log(jsonresponse);
 
     let res = {
         city: city,
@@ -29,7 +29,7 @@ export default function Search({ update }) {
         cloud: jsonresponse.clouds.all,
       };
     update(res);
-    document.body.className = jsonResponse.humidity> 75 ? 'rain' : jsonResponse.main.temp > 30 ? 'sunny' : jsonResponse.main.temp < 20 ? 'cold' : 'nice';
+    document.body.className = jsonresponse.humidity> 75 ? 'rain' : jsonresponse.main.temp > 30 ? 'sunny' : jsonresponse.main.temp < 20 ? 'cold' : 'nice';
   };
 
   return (
