@@ -30,6 +30,7 @@ export default function Search({ update }) {
     };
 
     update(res);
+    document.body.className = jsonResponse.clouds.all > 75 ? 'rain' : jsonResponse.main.temp > 30 ? 'sunny' : jsonResponse.main.temp < 20 ? 'cold' : 'nice';
   };
 
   return (

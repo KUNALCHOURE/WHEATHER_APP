@@ -1,7 +1,28 @@
-.search{
+.search {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin-top: 20px;
 }
+
+.search h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.search form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search form .MuiTextField-root {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+
+
+
