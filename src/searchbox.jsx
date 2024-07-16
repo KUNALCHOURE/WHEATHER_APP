@@ -1,57 +1,45 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import './searchbox.css'
+import './searchbox.css';
 import { useState } from 'react';
-import { json } from 'express';
 
-export default function Search({update}){
-    let [city,setcity]=useState("");
-        let API_URL="https://api.openweathermap.org/data/2.5/weather";
-        let API_KEY="262046f5b2da4f4d377a77daf8de34fc";
-    let handlechange=(event)=>{
-       
-        let val=event.target.value;
-        
-      setcity(val);
-  
-    }
-    let handlesubmit=async(event)=>{
-        event.preventDefault();
-        let response=await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
-        let jsonresponse= await response.json();
-     
-        console.log(jsonresponse);
+export default function Search({ update }) {
+  const [city, setCity] = useState("");
+  const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+  const API_KEY = "262046f5b2da4f4d377a77daf8de34fc";
 
-     let res={
-        city:city,
-        temp:jsonresponse.main.temp,
-        humidity:jsonresponse.main.humidity,
-        maxtemp:jsonresponse.main.temp_max,
-        mintemp:jsonresponse.main.temp_min,
-        feels_like:jsonresponse.main.feels_like,
-        cloud:jsonresponse.clouds.all,
-     }
+  const handleChange = (event) => {
+    setCity(event.target.value);
+  };
 
-     update(res);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
+    let jsonResponse = await response.json();
 
-    }
+    console.log(jsonResponse);
 
-    
-    return (
-        <>  
-        <div className="search">
-        <h1>Search here for weather</h1>
-     <form action="" onSubmit={handlesubmit} >
-        <TextField id="city" label="CITY_NAME" variant="outlined"onChange={handlechange} />
+    let res = {
+      city: city,
+      temp: jsonResponse.main.temp,
+      humidity: jsonResponse.main.humidity,
+      maxtemp: jsonResponse.main.temp_max,
+      mintemp: jsonResponse.main.temp_min,
+      feels_like: jsonResponse.main.feels_like,
+      cloud: jsonResponse.clouds.all,
+    };
+
+    update(res);
+  };
+
+  return (
+    <div className="search">
+      <h1>Search here for weather</h1>
+      <form onSubmit={handleSubmit}>
+        <TextField id="city" label="CITY_NAME" variant="outlined" onChange={handleChange} />
         <br /><br />
-        <Button variant="contained" type='submit' >SEARCH</Button>
-        
-        </form>
-        </div>
-       
-
-
-        </>
-
-    )
+        <Button variant="contained" type='submit'>SEARCH</Button>
+      </form>
+    </div>
+  );
 }

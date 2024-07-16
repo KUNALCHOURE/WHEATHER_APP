@@ -1,29 +1,30 @@
-import Search from './searchbox.jsx'
-import Information from './information.jsx'
-import { useState } from 'react'
-import './App.css'
+import Search from './searchbox.jsx';
+import Information from './information.jsx';
+import { useState } from 'react';
+import './App.css';
 
 function App() {
+  const [weather, setWeather] = useState({
+    city: "NAGPUR",
+    temp: 30.1,
+    maxtemp: 35,
+    mintemp: 29,
+    humidity: 80,
+    weather: "haze",
+    feels_like: 40.1,
+    cloud: 75,
+  });
 
-  let [wheather,setwheather]=useState({
-    city:"NAGPUR",
-    temp:30.1,
-    maxtemp:35,
-    mintemp:29,
-    humidity:80,
-    wheather:"haze",
-    feels_like:40.1,
-    cloud:"",
-  })
-  let update=(newwheather)=>{
-    setwheather(newwheather);
-  }
+  const update = (newWeather) => {
+    setWeather(newWeather);
+  };
+
   return (
     <>
-     <Search update={update}/>
-     <Information wheather={wheather}/>
+      <Search update={update} />
+      <Information weather={weather} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
