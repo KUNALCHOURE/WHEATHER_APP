@@ -10,9 +10,10 @@ function App() {
     maxtemp: 35,
     mintemp: 29,
     humidity: 80,
-    weather: "haze",
+    weather_: "haze",
     feels_like: 40.1,
-    cloud: 75,
+    cloud: "",
+
   });
 
   const update = (newWeather) => {

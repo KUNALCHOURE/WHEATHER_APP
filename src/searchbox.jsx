@@ -20,15 +20,14 @@ export default function Search({ update }) {
     console.log(jsonResponse);
 
     let res = {
-      city: city,
-      temp: jsonResponse.main.temp,
-      humidity: jsonResponse.main.humidity,
-      maxtemp: jsonResponse.main.temp_max,
-      mintemp: jsonResponse.main.temp_min,
-      feels_like: jsonResponse.main.feels_like,
-      cloud: jsonResponse.clouds.all,
-    };
-
+        city: city,
+        temp: jsonresponse.main.temp,
+        humidity: jsonresponse.main.humidity,
+        maxtemp: jsonresponse.main.temp_max,
+        mintemp: jsonresponse.main.temp_min,
+        feels_like: jsonresponse.main.feels_like,
+        cloud: jsonresponse.clouds.all,
+      };
     update(res);
     document.body.className = jsonResponse.humidity> 75 ? 'rain' : jsonResponse.main.temp > 30 ? 'sunny' : jsonResponse.main.temp < 20 ? 'cold' : 'nice';
   };
