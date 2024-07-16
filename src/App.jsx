@@ -20,10 +20,10 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       <Search update={update} />
       <Information weather={weather} />
-    </>
+    </div>
   );
 }
 
