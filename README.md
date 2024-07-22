@@ -1,30 +1,21 @@
-# Weather Information Card
+# Weather App
 
-This project displays a weather information card using React and Material-UI. The card shows current weather details such as temperature, humidity, and weather icons based on the weather conditions.
+## Description
+
+This is a weather application built with React that allows users to search for weather information by city name. The app fetches weather data from the OpenWeatherMap API and displays current weather conditions including temperature, humidity, and more. The background color of the page changes based on the weather conditions.
 
 ## Features
 
-- Displays city name with appropriate weather icon.
-- Shows temperature, humidity, max and min temperatures.
-- Dynamic background image based on weather conditions.
-  
+- Search for weather information by city name.
+- Displays current temperature, humidity, and other weather metrics.
+- Changes background color based on weather conditions:
+  - Rainy
+  - Sunny
+  - Cold
+  - Good weather (pleasant)
+
 ## Technologies Used
 
 - React
 - Material-UI
-- Unsplash for background images
-
-## Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/KUNALCHOURE/weather-info-card.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd weather-info-card
-    ```
-3. Install dependencies:
-    ```sh
-    npm install
-    ```
+- OpenWeatherMap API
