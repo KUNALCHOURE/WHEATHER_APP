@@ -28,8 +28,17 @@ export default function Search({ update }) {
         feels_like: jsonresponse.main.feels_like,
         cloud: jsonresponse.clouds.all,
       };
+      console.log(jsonresponse.main.humidity)
     update(res);
-    document.body.className = jsonresponse.humidity> 75 ? 'rain' : jsonresponse.main.temp > 30 ? 'sunny' : jsonresponse.main.temp < 20 ? 'cold' : 'nice';
+    if (jsonresponse.main.humidity> 75) {
+      document.body.className = 'rain';
+  } else if (jsonresponse.main.temp > 30) {
+      document.body.className = 'sunny';
+  } else if (jsonresponse.main.temp < 20) {
+      document.body.className = 'cold';
+  } else {
+      document.body.className = 'nice';
+  }
   };
 
   return (
