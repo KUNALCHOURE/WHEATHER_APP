@@ -16,7 +16,7 @@ export default function Search({ update }) {
     event.preventDefault();
     let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
     let jsonresponse = await response.json();
-
+  
     console.log(jsonresponse);
 
     let res = {
