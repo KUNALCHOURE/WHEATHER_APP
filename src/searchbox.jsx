@@ -45,7 +45,7 @@ export default function Search({ update }) {
     <div className="search">
       <h1>Search here for weather</h1>
       <form onSubmit={handleSubmit}>
-        <TextField id="city" label="CITY_NAME" variant="outlined" onChange={handleChange} />
+        <TextField id="city"  variant="outlined" placeholder="ENTER CITY NAME" onChange={handleChange} />
         <br /><br />
         <Button variant="contained" type='submit'>SEARCH</Button>
       </form>
