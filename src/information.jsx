@@ -33,6 +33,7 @@ export default function Information({ weather }) {
               <br />
               MAX TEMPERATURE: {weather.maxtemp} <br /><br />
               MIN TEMPERATURE: {weather.mintemp} <br />
+              <br />
               {`${weather.city} is currently experiencing ${weather.temp}°C, feeling like ${weather.feels_like}°C, with ${weather.humidity}% humidity and ${weather.cloud}% cloud cover.`}
             </Typography>
           </CardContent>
