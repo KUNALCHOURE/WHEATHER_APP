@@ -2,12 +2,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './searchbox.css';
 import { useState } from 'react';
-
+import config from './config.js';
 export default function Search({ update }) {
   const [city, setCity] = useState("");
-  const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-  const API_KEY = "262046f5b2da4f4d377a77daf8de34fc";
-
+  const API_URL = config.APIURL;
+  const API_KEY = config.APIKEY
+console.log(API_KEY)
   const handleChange = (event) => {
     setCity(event.target.value);
   };
