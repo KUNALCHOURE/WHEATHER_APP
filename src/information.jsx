@@ -7,12 +7,12 @@ import "./information.css";
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
-
+import nice from "../assets/nice.jpg"
 export default function Information({ weather }) {
   const rainUrl = "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJhaW4lMjB3ZWF0aGVyfGVufDB8fDB8fHww";
   const hotUrl = "https://images.unsplash.com/photo-1561647784-2f9c43b07a0b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   const coldUrl = "https://images.unsplash.com/photo-1612208695882-02f2322b7fee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sZCUyMHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D";
-
+ 
   return (
     <div className='info'>
       <Card sx={{ width: '100%', maxWidth: 450, margin: '20px', height: 450 }}>
@@ -20,7 +20,7 @@ export default function Information({ weather }) {
           <CardMedia
             component="img"
             height="190"
-            image={weather.humidity > 75 ? rainUrl : weather.temp > 30 ? hotUrl : coldUrl}
+            image={weather.humidity > 75 ? rainUrl : weather.temp > 30 ? hotUrl : weather.temp<15 ?coldUrl:nice}
             alt=""
           />
           <CardContent>
