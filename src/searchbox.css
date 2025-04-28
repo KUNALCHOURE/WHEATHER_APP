@@ -3,27 +3,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    padding: 20px;
 }
 
 .search h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    color: black;
+    font-size: 40px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    color: #333;
 }
 
 .search form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
-.search form .MuiTextField-root {
-    width: 300px;
-   
+.input-field {
+    width: 320px;
 }
-
-
-
 
