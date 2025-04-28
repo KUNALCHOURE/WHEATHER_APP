@@ -1,43 +1,13 @@
 .info {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    padding: 10px;
 }
 
-.card {
+.weather-card {
     width: 100%;
-    max-width: 450px;
-    margin: 20px;
-    height: 450px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    height: 190px;
-    width: 100%;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
-}
-
-.card-content h5 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.card-content p {
-    font-size: 16px;
-    color: #ccc;
+    max-width: 500px;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
 }
