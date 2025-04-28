@@ -3,11 +3,12 @@ import Button from '@mui/material/Button';
 import './searchbox.css';
 import { useState } from 'react';
 import config from './config.js';
+
 export default function Search({ update }) {
   const [city, setCity] = useState("");
   const API_URL = config.APIURL;
-  const API_KEY = config.APIKEY
-console.log(API_KEY)
+  const API_KEY = config.APIKEY;
+
   const handleChange = (event) => {
     setCity(event.target.value);
   };
@@ -16,38 +17,49 @@ console.log(API_KEY)
     event.preventDefault();
     let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
     let jsonresponse = await response.json();
-  
-    console.log(jsonresponse);
 
     let res = {
-        city: city,
-        temp: jsonresponse.main.temp,
-        humidity: jsonresponse.main.humidity,
-        maxtemp: jsonresponse.main.temp_max,
-        mintemp: jsonresponse.main.temp_min,
-        feels_like: jsonresponse.main.feels_like,
-        cloud: jsonresponse.clouds.all,
-      };
-      console.log(jsonresponse.main.humidity)
+      city: city,
+      temp: jsonresponse.main.temp,
+      humidity: jsonresponse.main.humidity,
+      maxtemp: jsonresponse.main.temp_max,
+      mintemp: jsonresponse.main.temp_min,
+      feels_like: jsonresponse.main.feels_like,
+      cloud: jsonresponse.clouds.all,
+    };
     update(res);
-    if (jsonresponse.main.humidity> 75) {
+
+    if (jsonresponse.main.humidity > 75) {
       document.body.className = 'rain';
-  } else if (jsonresponse.main.temp > 30) {
+    } else if (jsonresponse.main.temp > 30) {
       document.body.className = 'sunny';
-  } else if (jsonresponse.main.temp < 20) {
+    } else if (jsonresponse.main.temp < 20) {
       document.body.className = 'cold';
-  } else {
+    } else {
       document.body.className = 'nice';
-  }
+    }
   };
 
   return (
     <div className="search">
-      <h1>Search here for weather</h1>
+      <h1>Weather Search</h1>
       <form onSubmit={handleSubmit}>
-        <TextField id="city"  variant="outlined" placeholder="ENTER CITY NAME" onChange={handleChange} />
-        <br /><br />
-        <Button variant="contained" type='submit'>SEARCH</Button>
+        <TextField 
+          id="city" 
+          label="Enter City Name" 
+          variant="outlined" 
+          onChange={handleChange}
+          className="input-field"
+          sx={{ bgcolor: "white", borderRadius: 2 }}
+        />
+        <br />
+        <Button 
+          variant="contained" 
+          type="submit"
+          sx={{ mt: 2, px: 4, py: 1.5, borderRadius: 3, fontWeight: 'bold', background: 'linear-gradient(45deg, #2196f3 30%, #21cbf3 90%)' }}
+        >
+          Search
+        </Button>
       </form>
     </div>
   );
