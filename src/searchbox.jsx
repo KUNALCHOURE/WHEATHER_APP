@@ -1,3 +1,6 @@
+
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 import config from './config.js';
 
@@ -6,9 +9,7 @@ export default function Search({ update }) {
   const API_URL = config.APIURL;
   const API_KEY = config.APIKEY;
 
-  const handleChange = (event) => {
-    setCity(event.target.value);
-  };
+  const handleChange = (event) => setCity(event.target.value);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,32 +39,32 @@ export default function Search({ update }) {
   };
 
   return (
-    <div className="flex flex-col items-center mt-10 p-6">
-      <h1
-        className="text-4xl mb-6 font-bold text-gray-800 drop-shadow"
-        style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.3)" }}
-      >
+    <div className="flex flex-col items-center justify-center mt-10 p-5">
+      <h1 className="text-4xl mb-6 font-bold text-gray-800" style={{textShadow: "2px 2px 6px rgba(0,0,0,0.3)"}}>
         Weather Search
       </h1>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col items-center gap-4 w-full max-w-md bg-white shadow-lg rounded-lg p-6"
-      >
-        <input
+      <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
+        <TextField
           id="city"
-          type="text"
-          placeholder="Enter City Name"
-          value={city}
+          label="Enter City Name"
+          variant="outlined"
           onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+          sx={{ bgcolor: "white", borderRadius: 2, width: "320px" }}
         />
-        <button
+        <Button
+          variant="contained"
           type="submit"
-          className="w-full mt-2 py-3 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-lg shadow hover:from-blue-600 hover:to-cyan-500 transition-colors"
+          sx={{
+            mt: 2,
+            px: 4,
+            py: 1.5,
+            borderRadius: 2,
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #2196f3 30%, #21cbf3 90%)'
+          }}
         >
           Search
-        </button>
+        </Button>
       </form>
     </div>
   );
