@@ -1,6 +1,3 @@
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import './searchbox.css';
 import { useState } from 'react';
 import config from './config.js';
 
@@ -41,25 +38,32 @@ export default function Search({ update }) {
   };
 
   return (
-    <div className="search">
-      <h1>Weather Search</h1>
-      <form onSubmit={handleSubmit}>
-        <TextField 
-          id="city" 
-          label="Enter City Name" 
-          variant="outlined" 
+    <div className="flex flex-col items-center mt-10 p-6">
+      <h1
+        className="text-4xl mb-6 font-bold text-gray-800 drop-shadow"
+        style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.3)" }}
+      >
+        Weather Search
+      </h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-4 w-full max-w-md bg-white shadow-lg rounded-lg p-6"
+      >
+        <input
+          id="city"
+          type="text"
+          placeholder="Enter City Name"
+          value={city}
           onChange={handleChange}
-          className="input-field"
-          sx={{ bgcolor: "white", borderRadius: 2 }}
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
         />
-        <br />
-        <Button 
-          variant="contained" 
+        <button
           type="submit"
-          sx={{ mt: 2, px: 4, py: 1.5, borderRadius: 3, fontWeight: 'bold', background: 'linear-gradient(45deg, #2196f3 30%, #21cbf3 90%)' }}
+          className="w-full mt-2 py-3 rounded-lg font-bold bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-lg shadow hover:from-blue-600 hover:to-cyan-500 transition-colors"
         >
           Search
-        </Button>
+        </button>
       </form>
     </div>
   );
