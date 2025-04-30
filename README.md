@@ -27,3 +27,6 @@ A modern, responsive weather application built with React. Users can search for 
 - Node.js and npm installed on your machine
 - An API key from [OpenWeatherMap](https://openweathermap.org/api)
 
+
+### ScreenShots
+![Image](https://github.com/user-attachments/assets/9543400f-a5a4-42e5-b05c-0013d6ae1717)
