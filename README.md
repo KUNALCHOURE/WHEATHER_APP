@@ -30,3 +30,7 @@ A modern, responsive weather application built with React. Users can search for 
 
 ### ScreenShots
 ![Image](https://github.com/user-attachments/assets/9543400f-a5a4-42e5-b05c-0013d6ae1717)
+
+<br> <br>
+
+![Image](https://github.com/user-attachments/assets/6a24fbc1-bb46-4d5d-a886-1ba4aaa62626)
