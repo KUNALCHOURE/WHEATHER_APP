@@ -34,3 +34,7 @@ A modern, responsive weather application built with React. Users can search for 
 <br> <br>
 
 ![Image](https://github.com/user-attachments/assets/6a24fbc1-bb46-4d5d-a886-1ba4aaa62626)
+
+<br><br>
+
+![Image](https://github.com/user-attachments/assets/85ae5860-7e37-4409-b3ab-d147d144c2d6)
